@@ -1,0 +1,14 @@
+#!/usr/bin/gnuplot -persist
+# file : graping 
+# Author : James Magochi
+# Email : james@magochi.net
+# Desc: To be used alongside tuning.sh
+# Begin <=
+set terminal png nocrop font small size 640,480
+set output 'memory-utilization.png'
+set style data histograms
+set xtics rotate
+set title "Linux Servers :: Memory Utilizations"
+set xlabel "Program Name" 
+set ylabel "Memory (kb)" 
+plot "~/mem3" using 2:xticlabels(1) notitle
